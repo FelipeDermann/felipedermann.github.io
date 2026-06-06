@@ -28,15 +28,10 @@ html, body {
 
 body {
   font-family: Montserrat, sans-serif;
+  background-color: #121212;
   color: #d7d7d7;
   display: flex;
   flex-direction: column;
-  background: #0a0a0a;
-  background-image: 
-    linear-gradient(#00e5ff 1px, transparent 1px),
-    linear-gradient(90deg, #00e5ff 1px, transparent 1px);
-  background-size: 40px 40px;
-  color: #d7d7d7; /* keep text readable */
 }
 
 h1 {
@@ -159,30 +154,4 @@ h2 {
       border-radius: 5px; /* Maintain border radius for consistent look */
       margin-top: 0; /* Add margin at the top for spacing */
   }
-
-  /* Give all main content containers a solid background */
-.top-container,
-.bottom-container,
-.navigation-buttons,
-.nav-button,
-.main-container {
-  background-color: #121212; /* or whatever dark color you like */
-}
-
-/* Keep buttons and interactive elements consistent */
-.nav-button {
-  background-color: #121212;
-}
-
-.nav-button.active, .nav-button:hover {
-  background-color: #171717;
-}
-
-/* Ensure text areas are opaque */
-.user-information,
-.projects-container,
-.stats-container,
-.tags-container {
-  background-color: #121212;
-}
 }
