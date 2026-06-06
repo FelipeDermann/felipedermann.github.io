@@ -182,3 +182,13 @@ p {
         border-radius: .5em .5em 0 0; /* Adjust border radius for better look on mobile */
     }
 }
+
+ .social-icons a i {
+  color: #0a2f6c; 
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover i {
+  color: #3a7bd5; 
+}
