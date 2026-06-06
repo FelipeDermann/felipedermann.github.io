@@ -57,7 +57,7 @@ plugins:
 
 author:
   name   : "Felipe Dermann de Moura"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/foto_atual.jpg"
   bio    : "Developer (Mobile Apps, VR APps, Unity, C# and more)"
   links:
     - label: "Website"
