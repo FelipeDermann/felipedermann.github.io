@@ -156,12 +156,12 @@ h2 {
   }
 
   .social-icons a i {
-  color: #e0e0e0;  /* cinza claro, bem visível */
-  font-size: 24px; /* tamanho um pouco maior (opcional) */
+  color: #0a2f6c; 
+  font-size: 24px;
   transition: 0.3s;
 }
 
 .social-icons a:hover i {
-  color: #edb049;  /* dourado ao passar o mouse */
+  color: #3a7bd5; 
 }
 }
