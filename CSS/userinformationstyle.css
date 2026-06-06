@@ -33,8 +33,8 @@
 .profile-pic {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  object-fit: cover;  /* mantém a proporção e corta o excesso */
+  border-radius: 50%; /* se quiser redonda */
 }
 
 /* Social Icons Styles */
