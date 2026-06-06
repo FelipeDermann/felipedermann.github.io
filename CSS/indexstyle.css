@@ -154,4 +154,14 @@ h2 {
       border-radius: 5px; /* Maintain border radius for consistent look */
       margin-top: 0; /* Add margin at the top for spacing */
   }
+
+  .social-icons a i {
+  color: #edb049;  /* cor dourada igual ao hover dos botões */
+  font-size: 24px; /* aumenta um pouco o tamanho */
+  transition: 0.3s;
+  }
+
+  .social-icons a:hover i {
+  color: #ffffff;  /* branco ao passar o mouse */
+  }
 }
