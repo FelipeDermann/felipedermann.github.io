@@ -13,10 +13,11 @@ function addUserInformation() {
         .then(response => response.text())
         .then(data => {
             const lines = data.split('\n').map(line => line.trim());
-            const [profilePicUrl, profileName, profileRole, location, ...socials] = lines;
+            // Agora: [foto, nome, cargo, ...socials] - sem location
+            const [profilePicUrl, profileName, profileRole, ...socials] = lines;
 
             // Get the container where the user info should be added
-            const container = document.querySelector('.top-container'); // Select the specific container
+            const container = document.querySelector('.top-container');
 
             // Create a document fragment for better performance
             const fragment = document.createDocumentFragment();
@@ -27,7 +28,7 @@ function addUserInformation() {
 
             // Create and append the image
             const img = document.createElement("img");
-            img.src = profilePicUrl; // Your Profile Pic URL from txt
+            img.src = profilePicUrl;
             img.alt = "Profile Picture";
             img.className = "profile-pic";
             userInfoPanel.appendChild(img);
@@ -39,29 +40,26 @@ function addUserInformation() {
 
             const userName = document.createElement("h1");
             userName.className = "user-name";
-            userName.textContent = profileName; // Your Profile Name from txt
+            userName.textContent = profileName;
             userNameLink.appendChild(userName);
             userInfoPanel.appendChild(userNameLink);
 
             // Create and append the user role
             const userRole = document.createElement("h2");
-            userRole.textContent = profileRole; // Your Current Title & Studio from txt
+            userRole.textContent = profileRole;
             userInfoPanel.appendChild(userRole);
 
-            // Create and append the location
-            const userLocationContainer = document.createElement("div");
-            userLocationContainer.className = "user-location-container";
-
-            const locationIcon = document.createElement("span");
-            locationIcon.className = "material-symbols-outlined";
-            locationIcon.textContent = "near_me";
-            userLocationContainer.appendChild(locationIcon);
-
-            const userLocation = document.createElement("h2");
-            userLocation.textContent = location; // Your Location from txt
-            userLocationContainer.appendChild(userLocation);
-
-            userInfoPanel.appendChild(userLocationContainer);
+            // Localização - REMOVIDA (comentada)
+            // const userLocationContainer = document.createElement("div");
+            // userLocationContainer.className = "user-location-container";
+            // const locationIcon = document.createElement("span");
+            // locationIcon.className = "material-symbols-outlined";
+            // locationIcon.textContent = "near_me";
+            // userLocationContainer.appendChild(locationIcon);
+            // const userLocation = document.createElement("h2");
+            // userLocation.textContent = location;
+            // userLocationContainer.appendChild(userLocation);
+            // userInfoPanel.appendChild(userLocationContainer);
 
             // Create and append the social icons
             const socialIcons = document.createElement("div");
