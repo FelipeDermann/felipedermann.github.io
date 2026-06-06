@@ -154,8 +154,9 @@ h2 {
       border-radius: 5px; /* Maintain border radius for consistent look */
       margin-top: 0; /* Add margin at the top for spacing */
   }
+}
 
-  .social-icons a i {
+ .social-icons a i {
   color: #0a2f6c; 
   font-size: 24px;
   transition: 0.3s;
@@ -163,5 +164,4 @@ h2 {
 
 .social-icons a:hover i {
   color: #3a7bd5; 
-}
 }
