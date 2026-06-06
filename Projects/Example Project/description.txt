@@ -1,6 +1,6 @@
-Project Name
+Project 1
 ---
-Project Description
+Project Description Test
 ---
 Software Tags - separated by commas (marmoset toolbag, unity, UE5, Blender, 3ds Max)
 ---
