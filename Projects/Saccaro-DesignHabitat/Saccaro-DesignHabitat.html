@@ -3,35 +3,372 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project</title>
-    <link rel="stylesheet" href="../CSS/userinformationstyle.css?v=1.0" />
+    <title>Saccaro Design Habitat - App Demo</title>
     <link rel="stylesheet" href="../../CSS/main.css" />
     <link rel="icon" href="../../Resources/favicon/pilfav.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #0a0a0a;
+      }
+
+      /* Container principal */
+      .container {
+        display: block !important;
+        width: 100% !important;
+      }
+      
+      .media-container {
+        width: 100% !important;
+        flex: none !important;
+        padding: 100px 24px 60px 24px !important;
+        background: linear-gradient(135deg, #0a0a0a 0%, #121212 100%) !important;
+        min-height: 100vh;
+      }
+      
+      #project-media {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      /* Cards de mídia */
+      .media-item {
+        margin-bottom: 56px;
+        text-align: center;
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(2px);
+        border-radius: 24px;
+        padding: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.3s ease;
+      }
+      
+      .media-item:hover {
+        border-color: rgba(237, 176, 73, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+      
+      .media-item img,
+      .media-item video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+      
+      .media-description {
+        color: #888;
+        font-size: 13px;
+        margin-top: 16px;
+        letter-spacing: 0.3px;
+      }
+      
+      /* Botões de ação */
+      .store-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin: 24px 0 0 0;
+        flex-wrap: wrap;
+      }
+      
+      .store-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 28px;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 14px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+        letter-spacing: 0.3px;
+      }
+      
+      .google-play {
+        background: #121212;
+        color: #fff;
+        border: 1px solid #3ddc84;
+      }
+      
+      .google-play:hover {
+        background: #3ddc84;
+        color: #121212;
+        transform: translateY(-2px);
+      }
+      
+      .custom-link {
+        background: #121212;
+        color: #edb049;
+        border: 1px solid #edb049;
+      }
+      
+      .custom-link:hover {
+        background: #edb049;
+        color: #121212;
+        transform: translateY(-2px);
+      }
+      
+      /* Grid de imagens */
+      .image-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        margin: 16px 0 8px 0;
+      }
+      
+      .image-grid img {
+        width: calc(33.33% - 16px);
+        min-width: 200px;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 16px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .image-grid img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Caixa de descrição com borda */
+      .store-buttons-description {
+        border: 1px solid rgba(237, 176, 73, 0.3);
+        padding: 28px;
+        border-radius: 20px;
+        margin: 40px auto 32px auto;
+        max-width: 700px;
+        background: rgba(237, 176, 73, 0.03);
+        transition: all 0.3s ease;
+      }
+      
+      .store-buttons-description:hover {
+        border-color: rgba(237, 176, 73, 0.6);
+        background: rgba(237, 176, 73, 0.06);
+      }
+      
+      .buttonlink-description {
+        color: #ceac86;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-top: 0;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        word-wrap: break-word;
+      }
+      
+      /* Botões de navegação fixos */
+      #prev-project,
+      #next-project {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(237, 176, 73, 0.3);
+        color: #edb049;
+        font-size: 20px;
+        padding: 16px 20px;
+        cursor: pointer;
+        border-radius: 60px;
+        z-index: 100;
+        transition: all 0.25s ease;
+        font-weight: 500;
+      }
+      
+      #prev-project:hover,
+      #next-project:hover {
+        background: #edb049;
+        color: #121212;
+        border-color: #edb049;
+        transform: translateY(-50%) scale(1.05);
+      }
+      
+      #prev-project { left: 24px; }
+      #next-project { right: 24px; }
+      
+      /* Botão Home */
+      .back-to-portfolio {
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        color: #edb049;
+        padding: 10px 20px;
+        border-radius: 40px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 14px;
+        z-index: 100;
+        transition: all 0.25s ease;
+        border: 1px solid rgba(237, 176, 73, 0.3);
+        letter-spacing: 0.3px;
+      }
+      
+      .back-to-portfolio:hover {
+        background: #edb049;
+        color: #121212;
+        border-color: #edb049;
+        transform: translateY(-2px);
+      }
+      
+      /* Botão Topo */
+      #back-to-top {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(237, 176, 73, 0.3);
+        color: #edb049;
+        padding: 12px 16px;
+        cursor: pointer;
+        border-radius: 60px;
+        display: none;
+        transition: all 0.25s ease;
+        z-index: 100;
+      }
+      
+      #back-to-top:hover {
+        background: #edb049;
+        color: #121212;
+        transform: translateY(-2px);
+      }
+      
+      /* Separador sutil */
+      hr {
+        opacity: 0.1;
+        margin: 32px 0;
+      }
+      
+      /* Responsivo */
+      @media (max-width: 900px) {
+        .media-container { padding: 90px 20px 50px 20px !important; }
+        #project-media { max-width: 100%; }
+        .image-grid img {
+          width: calc(50% - 12px);
+          height: 240px;
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .media-container { padding: 80px 16px 40px 16px !important; }
+        .media-item { padding: 16px; margin-bottom: 32px; }
+        .store-button { padding: 10px 20px; font-size: 13px; }
+        .image-grid img {
+          width: 100%;
+          height: 220px;
+        }
+        #prev-project, #next-project {
+          padding: 12px 16px;
+          font-size: 16px;
+        }
+        #prev-project { left: 12px; }
+        #next-project { right: 12px; }
+        .back-to-portfolio { top: 16px; left: 16px; padding: 8px 16px; font-size: 12px; }
+        .store-buttons-description { padding: 20px; margin: 24px auto; }
+      }
+    </style>
   </head>
   <body>
-    <!-- Botão Voltar -->
     <a href="/index.html" class="back-to-portfolio">← Home</a>
     
     <div class="container">
       <div class="media-container">
-        <div id="project-media"></div>
+        <div id="project-media">
+          
+          <!-- IMAGEM ÚNICA -->
+          <div class="media-item">
+            <img src="angel_island_wallpaper.jpg" alt="Visualização do aplicativo">
+            <p class="media-description">Interface principal do aplicativo Saccaro Design Habitat</p>
+          </div>
+          
+          <!-- VÍDEO DEMONSTRATIVO -->
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="teste.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">Demonstração das funcionalidades do app</p>
+          </div>
+          
+          <!-- GIF -->
+          <div class="media-item">
+            <img src="teste 2.gif" alt="GIF demonstrativo">
+            <p class="media-description">Fluxo de navegação e principais telas</p>
+          </div>
+          
+          <!-- CAIXA DE INFORMAÇÃO COM BOTÃO -->
+          <div class="store-buttons-description">
+            <p class="buttonlink-description">
+              Infelizmente não é possível utilizar o aplicativo sem ter uma conta administrada pela própria Saccaro. 
+              Mas é possível acessar a página da Google Play para mais informações:
+            </p>
+            <div class="store-buttons">
+              <a href="https://play.google.com/store/apps/details?id=com.PlanXP.SaccaroDesignHabitat&hl=pt_BR" target="_blank" class="store-button google-play">
+                <i class="fab fa-google-play"></i> Google Play
+              </a>
+            </div>
+          </div>
+
+          <!-- GRID DE IMAGENS (LADO A LADO) -->
+          <div class="media-item">
+            <div class="image-grid">
+              <img src="angel_island_wallpaper.jpg" alt="Screenshot 1">
+              <img src="angel_island_wallpaper.jpg" alt="Screenshot 2">
+              <img src="angel_island_wallpaper.jpg" alt="Screenshot 3">
+            </div>
+            <p class="media-description">Galeria de telas do aplicativo</p>
+          </div>
+          
+        </div>
         
-        <!-- Navigation Buttons -->
-        <button id="prev-project" class="nav-button" type="button" aria-label="Previous Project">
-            <i class="fa fa-chevron-left"></i>
+        <!-- Botões de navegação entre projetos -->
+        <button id="prev-project" class="nav-button" type="button">
+          <i class="fa fa-chevron-left"></i> Anterior
         </button>
-        <button id="next-project" class="nav-button" type="button" aria-label="Next Project">
-            <i class="fa fa-chevron-right"></i>
+        <button id="next-project" class="nav-button" type="button">
+          Próximo <i class="fa fa-chevron-right"></i>
         </button>
         
-        <!-- Back to Top Button -->
-        <button id="back-to-top" class="back-to-top-button" type="button" aria-label="back to the top">
-            <i class="fa fa-arrow-up"></i> 
+        <!-- Botão voltar ao topo -->
+        <button id="back-to-top" class="back-to-top-button" type="button">
+          <i class="fa fa-arrow-up"></i>
         </button>
       </div>
     </div>
 
-    <script src="../../JS/userinformation.js"></script>
-    <script src="../../JS/projects.js"></script>
+    <!-- Scripts -->
+    <script>
+      // Back to Top Button
+      const backToTop = document.getElementById('back-to-top');
+      const mediaContainer = document.querySelector('.media-container');
+      
+      if (mediaContainer) {
+        mediaContainer.addEventListener('scroll', () => {
+          if (backToTop) backToTop.style.display = mediaContainer.scrollTop > 500 ? 'flex' : 'none';
+        });
+      }
+      
+      if (backToTop) {
+        backToTop.addEventListener('click', () => {
+          if (mediaContainer) mediaContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    </script>
   </body>
 </html>
