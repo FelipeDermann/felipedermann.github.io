@@ -6,13 +6,16 @@
     <title>Project</title>
     <link rel="stylesheet" href="../CSS/userinformationstyle.css?v=1.0" />
     <link rel="stylesheet" href="../../CSS/main.css" />
-    <!-- Custom Favicon -->
     <link rel="icon" href="../../Resources/favicon/pilfav.png" type="image/png"/>
   </head>
   <body>
+    <!-- Botão Voltar -->
+    <a href="/index.html" class="back-to-portfolio">← Home</a>
+    
     <div class="container">
       <div class="media-container">
         <div id="project-media"></div>
+        
         <!-- Navigation Buttons -->
         <button id="prev-project" class="nav-button" type="button" aria-label="Previous Project">
             <i class="fa fa-chevron-left"></i>
@@ -20,27 +23,14 @@
         <button id="next-project" class="nav-button" type="button" aria-label="Next Project">
             <i class="fa fa-chevron-right"></i>
         </button>
+        
         <!-- Back to Top Button -->
         <button id="back-to-top" class="back-to-top-button" type="button" aria-label="back to the top">
             <i class="fa fa-arrow-up"></i> 
         </button>
       </div>
-      <div class="info-container">
-        <div class="top-container">
-          <!-- User Information Panel -->
-          <div class="user-info-panel"></div>
-        </div>
-        <div class="project-description-container">
-          <h1 id="project-title"></h1>
-          <p id="project-description"></p>
-        </div>
-        <hr />
-        <h3>Software Used</h3>
-        <div class="project-tags-container" id="project-tags"></div>
-        <hr />
-        <div class="project-stats-container" id="project-stats"></div>
-      </div>
     </div>
+
     <script src="../../JS/userinformation.js"></script>
     <script src="../../JS/projects.js"></script>
   </body>

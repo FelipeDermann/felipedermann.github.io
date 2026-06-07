@@ -1,0 +1,14 @@
+angel_island_wallpaper.jpg
+Descrição teste. Link do aplicativo na Google Play: 
+
+https://play.google.com/store/apps/details?id=com.PlanXP.SaccaroDesignHabitat&hl=pt_BR
+Google Play
+
+angel_island_wallpaper.jpg
+Description for example2
+
+teste 2.gif
+These aren't real images but need replacing with your own.
+
+teste.mp4
+MP4's are also supported but like with images should be hosted somewhere like dropbox.

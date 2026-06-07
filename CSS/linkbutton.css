@@ -1,0 +1,63 @@
+.store-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.store-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.google-play {
+  background: #121212;
+  color: #ffffff;
+  border: 1px solid #3ddc84;
+}
+
+.google-play:hover {
+  background: #3ddc84;
+  color: #121212;
+}
+
+.app-store {
+  background: #121212;
+  color: #ffffff;
+  border: 1px solid #0a84ff;
+}
+
+.app-store:hover {
+  background: #0a84ff;
+  color: #ffffff;
+}
+
+.store-button i {
+  font-size: 20px;
+}
+
+.store-button.custom-link {
+  background: #121212;
+  color: #edb049;
+  border: 1px solid #edb049;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.store-button.custom-link:hover {
+  background: #edb049;
+  color: #121212;
+}

@@ -4,6 +4,6 @@ Project Description 2 teste
 ---
 Software Tags - separated by commas (marmoset toolbag, unity, UE5, Blender, 3ds Max)
 ---
-../Projects/BigMegaGunExample/angel island wallpaper.jpg 
+../Projects/NSKRolamentos/angel_island_wallpaper.jpg 
 ---
-bigmegagun.html
+NSK-Rolamentos.html

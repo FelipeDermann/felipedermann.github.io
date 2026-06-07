@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = await response.text();
             const [title, description, tags] = text.split('---').map(line => line.trim());
             document.getElementById('project-title').textContent = title;
-            document.title = title; // Set the document title as well
+            document.title = title;
     
             const descriptionContainer = document.getElementById('project-description');
             const formattedDescription = convertUrlsToLinks(description);
@@ -54,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
     
-
     const renderTags = (tags) => {
         const tagsContainer = document.getElementById('project-tags');
         tags.split(',').map(tag => tag.trim()).forEach(tag => {
@@ -81,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 let urls = [lines[i]];
 
                 // Check if the next line is a description
-                if (i + 1 < lines.length && !lines[i + 1].match(/\.(jpeg|jpg|gif|png|mp4|webm|mview)$/) && !lines[i + 1].includes('youtube.com') && !lines[i + 1].includes('sketchfab.com') && !lines[i + 1].includes(' // ')) {
+                if (i + 1 < lines.length && !lines[i + 1].match(/\.(jpeg|jpg|gif|png|mp4|webm|mview)$/) && !lines[i + 1].includes('youtube.com') && !lines[i + 1].includes('sketchfab.com') && !lines[i + 1].includes(' // ') && !lines[i + 1].match(/^https?:\/\//)) {
                     description = lines[i + 1];
                     i += 1;
                 }
@@ -109,6 +108,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const createLinkButton = (url, description) => {
+        const mediaElement = document.createElement('div');
+        mediaElement.className = 'media-item store-buttons';
+
+        const buttonText = description || 'Acessar Link';
+        
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.className = 'store-button custom-link';
+        link.innerHTML = `<i class="fas fa-external-link-alt"></i> ${buttonText}`;
+        
+        mediaElement.appendChild(link);
+        return mediaElement;
+    };
+
     const createMarmosetViewerElement = (url) => {
         const mediaElement = document.createElement('div');
         mediaElement.className = 'media-item marmoset-item';
@@ -116,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const iframe = document.createElement('iframe');
         iframe.src = url;
         iframe.allow = 'autoplay; fullscreen';
-        iframe.setAttribute('allowfullscreen', ''); // Ensure allowfullscreen is set correctly
+        iframe.setAttribute('allowfullscreen', '');
         iframe.title = 'Marmoset Viewer';
 
         mediaElement.appendChild(iframe);
@@ -134,11 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
             mediaElement = createYouTubeElement(urls[0]);
         } else if (urls[0].includes('sketchfab.com')) {
             mediaElement = createSketchfabElement(urls[0]);
+        } else if (urls[0].match(/^https?:\/\//)) {
+            mediaElement = createLinkButton(urls[0], description);
         } else if (urls[0].match(/\.mview$/) != null) {
             mediaElement = createMarmosetViewerElement(urls[0]);
         }
 
-        if (mediaElement && description) {
+        if (mediaElement && description && !urls[0].match(/^https?:\/\//)) {
             const descElement = document.createElement('p');
             descElement.className = 'media-description';
             descElement.textContent = description;
@@ -184,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slider.addEventListener('input', () => {
                 const value = slider.value;
                 imgElement2.style.clipPath = `inset(0 0 0 ${value}%)`;
-                sliderLine.style.left = `calc(${value}% - 1px)`; // Ensure the line is aligned with the thumb
+                sliderLine.style.left = `calc(${value}% - 1px)`;
             });
 
             sliderContainer.appendChild(sliderLine);
@@ -299,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (info) {
                         const infoIcon = document.createElement('i');
                         infoIcon.className = 'fa-solid fa-circle-info stat-info-icon';
-                        infoIcon.removeAttribute('title');  // Remove the title attribute to avoid default tooltip
+                        infoIcon.removeAttribute('title');
 
                         const tooltip = document.createElement('div');
                         tooltip.className = 'tooltip';
@@ -363,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch(`../${newProject}/description.txt`);
                 const text = await response.text();
-                const htmlFileName = text.split('---')[4].trim(); // Extract the HTML filename from the description.txt
+                const htmlFileName = text.split('---')[4].trim();
                 window.location.href = `../${newProject}/${htmlFileName}`;
             } catch (error) {
                 console.error('Error loading next project description:', error);
@@ -375,13 +392,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopButton = document.getElementById('back-to-top');
 
     const mediaContainer = document.querySelector('.media-container');
-    mediaContainer.addEventListener('scroll', () => {
-        backToTopButton.style.display = mediaContainer.scrollTop > 1000 ? 'block' : 'none';
-    });
+    if (mediaContainer) {
+        mediaContainer.addEventListener('scroll', () => {
+            backToTopButton.style.display = mediaContainer.scrollTop > 1000 ? 'block' : 'none';
+        });
+    }
 
-    backToTopButton.addEventListener('click', () => {
-        mediaContainer.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', () => {
+            if (mediaContainer) {
+                mediaContainer.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
 
     // Keyboard navigation
     document.addEventListener('keydown', (event) => {
@@ -392,20 +415,22 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (event.key === 'ArrowRight') {
             navigateProjects(1);
         } else if (event.key === 'ArrowUp') {
-            mediaContainer.scrollBy({ top: -200, behavior: 'smooth' });
+            if (mediaContainer) mediaContainer.scrollBy({ top: -200, behavior: 'smooth' });
         } else if (event.key === 'ArrowDown') {
-            mediaContainer.scrollBy({ top: 200, behavior: 'smooth' });
+            if (mediaContainer) mediaContainer.scrollBy({ top: 200, behavior: 'smooth' });
         }
     });
 
     // Initialize the app
     const init = async () => {
         projects = await fetchProjects();
-        document.getElementById('prev-project').addEventListener('click', () => navigateProjects(-1));
-        document.getElementById('next-project').addEventListener('click', () => navigateProjects(1));
+        const prevButton = document.getElementById('prev-project');
+        const nextButton = document.getElementById('next-project');
+        if (prevButton) prevButton.addEventListener('click', () => navigateProjects(-1));
+        if (nextButton) nextButton.addEventListener('click', () => navigateProjects(1));
         await fetchDescription();
         await loadMedia();
-        await fetchStats(); // Fetch and display the stats
+        await fetchStats();
     };
 
     init();

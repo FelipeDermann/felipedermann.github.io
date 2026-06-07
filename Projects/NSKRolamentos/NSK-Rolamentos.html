@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="../CSS/userinformationstyle.css?v=1.0" />
+    <link rel="stylesheet" href="../../CSS/main.css" />
+    <link rel="icon" href="../../Resources/favicon/pilfav.png" type="image/png"/>
+    <style>
+      /* Ajuste para o media-container ocupar 100% */
+      .container {
+        display: block;
+      }
+      .media-container {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      /* Estilo do botão voltar */
+      .back-to-portfolio {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #edb049;
+        color: #121212;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        z-index: 100;
+        transition: 0.3s;
+      }
+      .back-to-portfolio:hover {
+        background: #ffffff;
+        color: #121212;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Botão Voltar -->
+    <a href="/index.html" class="back-to-portfolio">← Home</a>
+
+    <div class="container">
+      <div class="media-container">
+        <div id="project-media"></div>
+        
+        <!-- Navigation Buttons -->
+        <button id="prev-project" class="nav-button" type="button" aria-label="Previous Project">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button id="next-project" class="nav-button" type="button" aria-label="Next Project">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+        
+        <!-- Back to Top Button -->
+        <button id="back-to-top" class="back-to-top-button" type="button" aria-label="back to the top">
+            <i class="fa fa-arrow-up"></i> 
+        </button>
+      </div>
+    </div>
+
+    <script src="../../JS/userinformation.js"></script>
+    <script src="../../JS/projects.js"></script>
+  </body>
+</html>

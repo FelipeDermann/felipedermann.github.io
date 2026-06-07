@@ -73,3 +73,13 @@
 .user-location-container h2 {
   margin: 0;
 }
+
+ .social-icons a i {
+  color: #0a2f6c; 
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover i {
+  color: #3a7bd5; 
+}
