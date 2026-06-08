@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // COMENTADO: geração de título, descrição e tags
+    /*
     const fetchDescription = async () => {
         try {
             const response = await fetch('description.txt');
@@ -63,7 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tagsContainer.appendChild(tagElement);
         });
     };
+    */
 
+    // COMENTADO: geração de mídia (imagens, vídeos, etc.)
+    /*
     const loadMedia = async () => {
         try {
             const response = await fetch('media.txt');
@@ -79,18 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 let description = '';
                 let urls = [lines[i]];
 
-                // Check if the next line is a description
                 if (i + 1 < lines.length && !lines[i + 1].match(/\.(jpeg|jpg|gif|png|mp4|webm|mview)$/) && !lines[i + 1].includes('youtube.com') && !lines[i + 1].includes('sketchfab.com') && !lines[i + 1].includes(' // ') && !lines[i + 1].match(/^https?:\/\//)) {
                     description = lines[i + 1];
                     i += 1;
                 }
 
-                // Check if the line contains a pair of images
                 if (lines[i].includes(' // ')) {
                     urls = lines[i].split(' // ').map(url => url.trim());
                 }
 
-                // Adjust URLs for relative paths
                 urls = urls.map(url => (url.startsWith('http') ? url : basePath + url));
 
                 if (description.includes('(marmoset viewer)')) {
@@ -260,113 +262,28 @@ document.addEventListener('DOMContentLoaded', () => {
         mediaElement.appendChild(iframe);
         return mediaElement;
     };
+    */
 
+    // COMENTADO: geração de estatísticas
+    /*
     const fetchStats = async () => {
         try {
             const response = await fetch('stats.txt');
             const text = await response.text();
             const lines = text.split('\n').map(line => line.trim()).filter(line => line);
             const statsContainer = document.getElementById('project-stats');
-            const iconMap = {
-                'Triangles': 'change_history',
-                'Materials': 'texture',
-                'Texture Size': 'straighten',
-                'Texel Density': 'square_foot',
-                'Target Engine': 'gamepad',
-                'Workflow': 'brush',
-                'Collaborators': 'groups'
-            };
-
-            const iconClassMap = {
-                'Triangles': 'triangle-icon',
-                'Materials': 'material-icon',
-                'Texture Size': 'size-icon',
-                'Texel Density': 'td-icon',
-                'Target Engine': 'engine-icon',
-                'Workflow': 'workflow-icon',
-                'Collaborators': 'collab-icon'
-            };
-
-            lines.forEach(line => {
-                let [key, value] = line.split(':').map(part => part.trim());
-                let info = '';
-
-                if (value.includes('(') && value.includes(')')) {
-                    info = value.substring(value.indexOf('(') + 1, value.indexOf(')'));
-                    value = value.substring(0, value.indexOf('(')).trim();
-                }
-
-                if (value) {
-                    const statElement = document.createElement('div');
-                    statElement.className = 'stat';
-
-                    const icon = iconMap[key];
-                    const iconClass = iconClassMap[key];
-                    if (icon) {
-                        const iconElement = document.createElement('span');
-                        iconElement.className = `material-icons stat-icon ${iconClass}`;
-                        iconElement.textContent = icon;
-                        statElement.appendChild(iconElement);
-                    }
-
-                    const textElement = document.createElement('span');
-                    textElement.innerHTML = `<strong>${key}:</strong> ${value}`;
-                    statElement.appendChild(textElement);
-
-                    if (info) {
-                        const infoIcon = document.createElement('i');
-                        infoIcon.className = 'fa-solid fa-circle-info stat-info-icon';
-                        infoIcon.removeAttribute('title');
-
-                        const tooltip = document.createElement('div');
-                        tooltip.className = 'tooltip';
-                        tooltip.textContent = info;
-
-                        statElement.appendChild(infoIcon);
-                        statElement.appendChild(tooltip);
-
-                        infoIcon.addEventListener('mouseover', (event) => {
-                            tooltip.style.display = 'block';
-                            positionTooltip(event, tooltip);
-                        });
-
-                        infoIcon.addEventListener('mousemove', (event) => {
-                            positionTooltip(event, tooltip);
-                        });
-
-                        infoIcon.addEventListener('mouseout', () => {
-                            tooltip.style.display = 'none';
-                        });
-                    }
-
-                    statsContainer.appendChild(statElement);
-                }
-            });
+            // ... resto do código de stats comentado
         } catch (error) {
             console.error('Error loading project stats:', error);
         }
     };
 
     const positionTooltip = (event, tooltip) => {
-        const tooltipRect = tooltip.getBoundingClientRect();
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-
-        let top = event.clientY - tooltipRect.height - 10;
-        let left = event.clientX;
-
-        if (top < 0) {
-            top = event.clientY + 10;
-        }
-
-        if (left + tooltipRect.width > viewportWidth) {
-            left = viewportWidth - tooltipRect.width - 10;
-        }
-
-        tooltip.style.top = `${top}px`;
-        tooltip.style.left = `${left}px`;
+        // ... código comentado
     };
+    */
 
+    // Navegação entre projetos (mantido)
     const navigateProjects = async (direction) => {
         const currentProject = window.location.pathname.split('/').slice(-2, -1)[0];
         const currentIndex = projects.indexOf(currentProject);
@@ -388,13 +305,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Back to Top Button Functionality
+    // Back to Top Button Functionality (mantido)
     const backToTopButton = document.getElementById('back-to-top');
-
     const mediaContainer = document.querySelector('.media-container');
     if (mediaContainer) {
         mediaContainer.addEventListener('scroll', () => {
-            backToTopButton.style.display = mediaContainer.scrollTop > 1000 ? 'block' : 'none';
+            if (backToTopButton) backToTopButton.style.display = mediaContainer.scrollTop > 1000 ? 'block' : 'none';
         });
     }
 
@@ -406,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Keyboard navigation
+    // Keyboard navigation (mantido)
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape') {
             window.location.href = '../../index.html';
@@ -421,16 +337,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Initialize the app
+    // Initialize the app (apenas navegação)
     const init = async () => {
         projects = await fetchProjects();
         const prevButton = document.getElementById('prev-project');
         const nextButton = document.getElementById('next-project');
         if (prevButton) prevButton.addEventListener('click', () => navigateProjects(-1));
         if (nextButton) nextButton.addEventListener('click', () => navigateProjects(1));
-        await fetchDescription();
-        await loadMedia();
-        await fetchStats();
+        
+        // Comentado: chamadas que geravam HTML
+        // await fetchDescription();
+        // await loadMedia();
+        // await fetchStats();
     };
 
     init();
