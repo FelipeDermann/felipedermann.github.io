@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             throw new Error(`Network response was not ok: ${response.statusText}`);
         }
         const text = await response.text();
+        summaryElement.style.whiteSpace = 'pre-wrap';
         summaryElement.textContent = text;
     } catch (error) {
         console.error('Failed to load summary:', error);

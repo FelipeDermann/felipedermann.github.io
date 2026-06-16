@@ -22,39 +22,79 @@
     <div class="container">
       <div class="media-container">
         <div id="project-media">
+
+           <div class="media-item">
+            <p class="project-information-title">
+            Project Information</p>
+            <p class="project-information">
+            <strong>Company:</strong> Plan XP Marketing Digital Ltda <br>
+            <strong>Client:</strong> Saccaro <br>
+            <strong>Team Members:</strong> Other 2 Unity developers, 1 backend developer, 
+            1 UI/UX artist <br>
+            <strong>My Role:</strong> Unity Developer
+            </p>
+            <ul class="project-information-bulletpoints">
+              <li>Project architecture and workflow design</li>
+              <li>UI implementation</li>
+              <li>Two-way custom API communication. Fetching data from backend to populate UI 
+                and sending HTTP requests to save user changes.</li>
+            </ul>
+          </div>
           
-          <!-- IMAGEM ÚNICA -->
           <div class="media-item">
             <img src="SaccaroDH_Home.png" alt="Visualização do aplicativo" style="width: 35%; height: 20%;
             display: block; margin-left: auto; margin-right: auto;">
-            <p class="media-description" style="font-size: 18px; text-align: left; 
-            display: inline-block; width: 90%; margin: 0 auto;">
+            <p class="media-description">
               The main goal of this app is to facilitate contact between architects 
-              and Saccaro while also centralizing important information for the company 
-              and its partners. </p>
+              and Saccaro branches while also centralizing important information for 
+              the company and its partners. </p>
+          </div>
+
+          <div class="media-item">
+            <div class="image-grid">
+              <img src="arquiteto.png" alt="Screenshot 1">
+              <img src="gerenteAgendamentos.png" alt="Screenshot 2">
+              <img src="gerenteCardapio.png" alt="Screenshot 3">
+            </div>
+            <p class="media-description">
+              There are three types of accounts available in the app: architect, salesperson, 
+              and manager.<br> <br>
+              Architects can schedule visits to a Saccaro Branch near them, salespeople 
+              can see scheduled visits and the store's food menu while managers can see, confirm or 
+              cancel scheduled visits and edit the store's food menu.</p>
           </div>
           
-          <!-- VÍDEO DEMONSTRATIVO -->
           <div class="media-item">
             <video controls autoplay loop muted>
-              <source src="teste.mp4" type="video/mp4">
+              <source src="SaccaroDH_GerenteCardapio.mp4" type="video/mp4">
               Seu navegador não suporta vídeo.
             </video>
-            <p class="media-description">Demonstração das funcionalidades do app</p>
+            <p class="media-description">Manager account features demonstration. 
+              Looking at the calendar of scheduled visits and the store's food menu.
+            </p>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="agendamento.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">Architect account features demonstration. 
+              Scheduling a visit to a Saccaro branch.
+            </p>
           </div>
           
-          <!-- GIF -->
-          <div class="media-item">
+          <!-- <div class="media-item">
             <img src="teste 2.gif" alt="GIF demonstrativo" style="width: 40%; height: 20%;
             display: block; margin-left: auto; margin-right: auto;">
             <p class="media-description">Fluxo de navegação e principais telas</p>
-          </div>
+          </div> -->
           
-          <!-- CAIXA DE INFORMAÇÃO COM BOTÃO -->
-          <div class="store-buttons-description">
-            <p class="buttonlink-description">
-              Infelizmente não é possível utilizar o aplicativo sem ter uma conta administrada pela própria Saccaro. 
-              Mas é possível acessar a página da Google Play para mais informações:
+          <div class="important-box">
+            <p class="important-description">
+              Unfortunately, it is not possible to use the app without having an 
+              account managed by Saccaro itself. However, you can access the Google 
+              Play page for more information about the app and its features:
             </p>
             <div class="store-buttons">
               <a href="https://play.google.com/store/apps/details?id=com.PlanXP.SaccaroDesignHabitat&hl=pt_BR" target="_blank" class="store-button google-play">
@@ -62,20 +102,9 @@
               </a>
             </div>
           </div>
-
-          <!-- GRID DE IMAGENS (LADO A LADO) -->
-          <div class="media-item">
-            <div class="image-grid">
-              <img src="angel_island_wallpaper.jpg" alt="Screenshot 1">
-              <img src="angel_island_wallpaper.jpg" alt="Screenshot 2">
-              <img src="angel_island_wallpaper.jpg" alt="Screenshot 3">
-            </div>
-            <p class="media-description">Galeria de telas do aplicativo</p>
-          </div>
           
         </div>
         
-        <!-- Botões de navegação entre projetos -->
         <button id="prev-project" class="nav-button" type="button">
           <i class="fa fa-chevron-left"></i> Anterior
         </button>
@@ -83,7 +112,6 @@
           Próximo <i class="fa fa-chevron-right"></i>
         </button>
         
-        <!-- Botão voltar ao topo -->
         <button id="back-to-top" class="back-to-top-button" type="button">
           <i class="fa fa-arrow-up"></i>
         </button>
@@ -91,5 +119,6 @@
     </div>
 
     <script src="../../JS/projects.js"></script>
+    <script src="../../JS/expandableimage.js"></script>
   </body>
 </html>

@@ -1,0 +1,9 @@
+Unity
+VSCode
+C#
+JSON
+Clean Code
+Version Control (Git)
+API Integration
+VR
+Mobile

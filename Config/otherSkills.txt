@@ -1,0 +1,10 @@
+Notion
+Game Design
+Copilot
+Anydesk
+Backend APIs
+Web Development (HTML, CSS, JS)
+Java
+Postman
+Docker
+PostgreSQL

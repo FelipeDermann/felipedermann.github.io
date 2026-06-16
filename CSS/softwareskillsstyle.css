@@ -1,7 +1,6 @@
 .skills-panel {
     background-color: #121212;
     border-radius: 5px;
-    padding: 10px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -21,7 +20,6 @@
     flex-direction: column; /* Keep the title on top and tags below */
     align-items: flex-start; /* Align items to the start (left) */
     gap: 10px; /* Space between the title and the tag list */
-    padding: 10px;
     border-radius: 5px;
     width: 100%; /* Ensure it takes full width of its parent */
 }
