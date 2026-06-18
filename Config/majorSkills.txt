@@ -1,9 +1,9 @@
 Unity
 VSCode
 C#
-JSON
-Clean Code
-Version Control (Git)
-API Integration
 VR
+Version Control (Git)
+Clean Code
+API Integration
+JSON
 Mobile

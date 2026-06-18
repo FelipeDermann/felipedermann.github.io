@@ -141,7 +141,6 @@ body {
   margin: 0 auto;
 }
 
-/* Botões de ação */
 .store-buttons {
   display: flex;
   gap: 16px;
@@ -150,23 +149,28 @@ body {
   flex-wrap: wrap;
 }
 
-.store-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 28px;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  letter-spacing: 0.3px;
-}
-
 .google-play {
   background: #121212;
   color: #fff;
   border: 1px solid #3ddc84;
+}
+
+.google-play:hover {
+  background: #3ddc84;
+  color: #121212;
+  transform: translateY(-2px);
+}
+
+.other-website {
+  background: #121212;
+  color: #fff;
+  border: 1px solid #3d6fdc;
+}
+
+.other-website:hover {
+  background: #3d6fdc;
+  color: #121212;
+  transform: translateY(-2px);
 }
 
 .google-play:hover {

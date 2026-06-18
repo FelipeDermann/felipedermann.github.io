@@ -3,66 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project</title>
-    <link rel="stylesheet" href="../CSS/userinformationstyle.css?v=1.0" />
+    <title>Saccaro Design Habitat - App Demo</title>
     <link rel="stylesheet" href="../../CSS/main.css" />
     <link rel="icon" href="../../Resources/favicon/pilfav.png" type="image/png"/>
-    <style>
-      /* Ajuste para o media-container ocupar 100% */
-      .container {
-        display: block;
-      }
-      .media-container {
-        flex: 0 0 100%;
-        width: 100%;
-        height: 100vh;
-        position: relative;
-      }
-      /* Estilo do botão voltar */
-      .back-to-portfolio {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        background: #edb049;
-        color: #121212;
-        padding: 8px 16px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        font-family: 'Poppins', sans-serif;
-        z-index: 100;
-        transition: 0.3s;
-      }
-      .back-to-portfolio:hover {
-        background: #ffffff;
-        color: #121212;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- Botão Voltar -->
     <a href="/index.html" class="back-to-portfolio">← Home</a>
 
+    <div class="project-title">
+      <h1>NSK Rolamentos</h1>
+      <p class="subtitle" style="font-size: 20px;">Mobile and Windows catalogue app for the 
+      company NSK Brasil.</p>
+    </div>
+    
     <div class="container">
       <div class="media-container">
-        <div id="project-media"></div>
+        <div id="project-media">
+
+           <div class="media-item">
+            <p class="project-information-title">
+            Project Information</p>
+            <p class="project-information">
+            <strong>Company:</strong> Plan XP Marketing Digital Ltda <br>
+            <strong>Client:</strong> NSK Brasil Ltda <br>
+            <strong>Platforms:</strong> Android, iOS, Windows <br>
+            <strong>Team Members:</strong> One other Unity developer, 1 backend developer, 
+            1 UI/UX artist <br>
+            <strong>My Role:</strong> Unity Developer
+            </p>
+            <ul class="project-information-bulletpoints">
+              <li>Project architecture and workflow design</li>
+              <li>UI implementation</li>
+              <li>Two-way custom API communication. Fetching data from backend to populate UI 
+                and sending HTTP requests to save user changes.</li>
+            </ul>
+          </div>
+          
+          <div class="media-item">
+            <img src="intro.png" alt="Visualização do aplicativo" style="width: 35%; height: 20%;
+            display: block; margin-left: auto; margin-right: auto;">
+            <p class="media-description">
+            This app was made to catalogue products and resellers of NSK products.<br>
+             </p>
+          </div>
+
+          <div class="media-item">
+            <div class="image-grid">
+              <img src="nsk-pc1.png" alt="Screenshot 1">
+              <img src="nsk-mobile1.png" alt="Screenshot 2">
+            </div>
+            <p class="media-description">Both Windows and mobile versions have 
+            the same core functionality, the only difference being the UI layout.
+              </p>
+          </div>
+          
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="nsk-mobile-register.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">Mobile version initial registration demonstration.<br>
+              An external API is used to fetch official country, state and cities to populate 
+              the dropdowns.
+            </p>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="nsk-mobile.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">Mobile version product search demonstration. <br>
+              After registration, the app requests from a custom API to download a 
+              catalogue table containing the information of all products and resellers, 
+              the user simply filters through the data if needed.
+            </p>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="nsk-pc-dist.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description"> Windows version reseller search demonstration.
+            </p>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="nsk-pc-misc.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description"> Showing other features. All contact information 
+            are external links that take to other websites through the user's own browser.
+            </p>
+          </div>
+          
+          <div class="important-box">
+            <p class="important-description">
+              Due to the fact that this app was sent to NSK Brasil directly and was never 
+              published to the app stores, there is no link or build to share.<br> 
+              The button below will take you to the announcement page of this project on
+              Plan XP's website. It's possible to contact the company and ask about this project
+              and my participation in it if needed. 
+            </p>
+            <div class="store-buttons">
+              <a href="https://planmkt.com.br/blog/detalhes/novo-aplicativo-nsk-rolamentos"
+              target="_blank" class="store-button other-website">
+                <i ></i> Announcement Page
+              </a>
+            </div>
+          </div>
+          
+        </div>
         
-        <!-- Navigation Buttons -->
-        <button id="prev-project" class="nav-button" type="button" aria-label="Previous Project">
-            <i class="fa fa-chevron-left"></i>
+        <button id="prev-project" class="nav-button" type="button">
+          <i class="fa fa-chevron-left"></i> Anterior
         </button>
-        <button id="next-project" class="nav-button" type="button" aria-label="Next Project">
-            <i class="fa fa-chevron-right"></i>
+        <button id="next-project" class="nav-button" type="button">
+          Próximo <i class="fa fa-chevron-right"></i>
         </button>
         
-        <!-- Back to Top Button -->
-        <button id="back-to-top" class="back-to-top-button" type="button" aria-label="back to the top">
-            <i class="fa fa-arrow-up"></i> 
+        <button id="back-to-top" class="back-to-top-button" type="button">
+          <i class="fa fa-arrow-up"></i>
         </button>
       </div>
     </div>
 
-    <script src="../../JS/userinformation.js"></script>
     <script src="../../JS/projects.js"></script>
+    <script src="../../JS/expandableimage.js"></script>
   </body>
 </html>

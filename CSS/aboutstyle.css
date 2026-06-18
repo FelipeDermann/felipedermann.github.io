@@ -97,7 +97,7 @@ hr {
 p {
     font-size: 16px;
     line-height: 1.4;
-    color: grey;
+    color: rgb(154, 153, 153);
 }
 
 .summary-panel p {
