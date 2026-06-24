@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saccaro Design Habitat - App Demo</title>
+    <link rel="stylesheet" href="../../CSS/main.css" />
+    <link rel="icon" href="../../Resources/favicon/pilfav.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <a href="/index.html" class="back-to-portfolio">← Home</a>
+
+    <div class="project-title">
+      <h1>Drone XP Racing</h1>
+      <p class="subtitle" style="font-size: 20px;">Virtual Reality app for Meta Quest.
+      </p>
+    </div>
+    
+    <div class="container">
+      <div class="media-container">
+        <div id="project-media">
+
+           <div class="media-item">
+            <p class="project-information-title">
+            Project Information</p>
+            <p class="project-information">
+            <strong>Company:</strong> Plan XP Marketing Digital Ltda <br>
+            <strong>Platforms:</strong> Meta Quest <br>
+            <strong>Team Members:</strong> One other Unity developer, one UI/UX artist <br>
+            <strong>My Role:</strong> Unity Developer
+            </p>
+            <ul class="project-information-bulletpoints">
+              <li>Project architecture and workflow design</li>
+              <li>UI implementation</li>
+              <li>Helped in drone gameplay and rings placement with tweaks and optimization</li>
+              <li>Implemented the circuits system that allows the user to load and save
+              their rings setups
+              </li>
+              <li>Implemented the Unity's localization package system for the 
+              three language options of the app</li>
+            </ul>
+          </div>
+          
+          <div class="media-item">
+            <img src="dronexp-mr.png" alt="Visualização do aplicativo" style="width: 80%; height: 20%;
+            display: block; margin-left: auto; margin-right: auto;">
+            <p class="media-description">
+              A free, simple game designed to expand PlanXP's portfolio and demonstrate the 
+              company's VR development capabilities.<br>
+              Players control a drone through rings in a virtual environment using Meta Quest 
+              controllers. The ring layout is fully customizable, as users can position each 
+              ring themselves. <br><br>
+              On the Meta Quest 3, Mixed Reality (MR) allows game elements 
+              to be overlaid onto the user's real-world environment, which is scanned by the 
+              device's cameras. The headset natively detects walls, ceilings, floors, and other 
+              surfaces, using them as collision points that affect the drone's movement.
+            </p>
+          </div>
+
+            <div class="important-box">
+            <p class="important-description">
+              When I worked on this project I was given a Meta Quest 2 for testing which 
+              unfortunately is incapable of running the MR mode of the game.<br>
+              Because of that, all the subsequent videos on this page were recorded inside the VR mode
+              of the game instead which puts the user inside a virtual room environment that works
+              the same exact way as the MR mode but without the camera feed of the real world in 
+              the background.  
+            </p>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="dronexp-menus.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description"> Menus of the game. <br>
+              Localization was implemented using a Unity package that manages all 
+              in-game text. <br> 
+              The system uses separate string tables for each supported 
+              language, with every UI element text linked to a specific entry. When the user 
+              changes the language, all text is automatically replaced with the appropriate 
+              translation.
+            </p>
+          </div>
+
+          <div class="media-item">
+          <video controls autoplay loop muted>
+            <source src="dronexp-flying.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+          <p class="media-description">Drone flying demonstration where I helped with tweaks and
+            optimizations. <br>
+            The drone can fly freely by using the analog sticks of the Meta Quest. 
+            A First Person view camera can be toggled on to be able to 
+            see what the drone sees. <br>
+          </p>
+          </div>
+
+          <div class="media-item">
+          <video controls autoplay loop muted>
+            <source src="dronexp-rings.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+          <p class="media-description">Another feature I helped tweak, ring placement.<br>
+            It's possible to place rings in the environment and the drone can fly through them. <br>
+            It's mandatory to fly through all rings in order, starting at the Start ring all the way
+            to the Finish ring.
+          </p>
+          </div>
+
+          <div class="media-item">
+          <video controls autoplay loop muted>
+            <source src="dronexp-circuits.mp4" type="video/mp4">
+            Seu navegador não suporta vídeo.
+          </video>
+          <p class="media-description"> Circuits feature I implemented.<br>
+            The user can access the Circuits menu to save the current ring layout or load a
+            previously saved layout. <br>
+            A json file is created or loaded, containing the current position and rotation of all 
+            rings and any pertinent data which is then applied to the current layout.
+          </p>
+          </div>
+          
+          <div class="important-box">
+            <p class="important-description">
+              This app is free and available on the Meta Quest Store. It works on any Meta Quest
+              headset, but the Mixed Reality (MR) features are exclusive to the Meta Quest 3. 
+              Older models will run the experience in standard VR mode.
+            </p>
+            <div class="store-buttons">
+              <a href="https://www.meta.com/pt-br/experiences/drone-xp-racing/7887462151284556/?srsltid=AfmBOoooKZJVXp4DI2KmONg3F_5kjQh95Ra40ZOksrVEZ5SFMzy3T8_o"
+              target="_blank" class="store-button other-website">
+                <i ></i> Meta Quest Store
+              </a>
+            </div>
+          </div>
+          
+        </div>
+        
+        <button id="prev-project" class="nav-button" type="button">
+          <i class="fa fa-chevron-left"></i> Anterior
+        </button>
+        <button id="next-project" class="nav-button" type="button">
+          Próximo <i class="fa fa-chevron-right"></i>
+        </button>
+        
+        <button id="back-to-top" class="back-to-top-button" type="button">
+          <i class="fa fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="../../JS/projects.js"></script>
+    <script src="../../JS/expandableimage.js"></script>
+  </body>
+</html>

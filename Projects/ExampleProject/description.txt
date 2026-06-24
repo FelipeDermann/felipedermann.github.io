@@ -1,9 +1,0 @@
-Project 1
----
-Project Description Test
----
-Software Tags - separated by commas (marmoset toolbag, unity, UE5, Blender, 3ds Max)
----
-thumbnail url (gets injected into your landing page) 
----
-template-project.html

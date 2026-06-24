@@ -1,0 +1,9 @@
+Drone XP Racing
+---
+VR app to control a drone in your room via MR.
+---
+Unity, C#, Meta Quest
+---
+../Projects/DroneXP/droneCover.png
+---
+DroneXP.html
