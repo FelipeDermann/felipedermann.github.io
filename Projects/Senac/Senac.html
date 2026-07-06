@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saccaro Design Habitat - App Demo</title>
+    <link rel="stylesheet" href="../../CSS/main.css" />
+    <link rel="icon" href="../../Resources/favicon/pilfav.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <a href="/index.html" class="back-to-portfolio">← Home</a>
+
+    <div class="project-title">
+      <h1>Senac Cores and Ergonomia</h1>
+      <p class="subtitle" style="font-size: 20px;">Web apps for the education
+        institution Senac.</p>
+    </div>
+    
+    <div class="container">
+      <div class="media-container">
+        <div id="project-media">
+
+           <div class="media-item">
+            <p class="project-information-title">
+            Project Information</p>
+            <p class="project-information">
+            <strong>Company:</strong> Plan XP Marketing Digital Ltda <br>
+            <strong>Client:</strong> Senac <br>
+            <strong>Platforms:</strong> Web <br>
+            <strong>Team Members:</strong> One 3D artist, one UI/UX artist <br>
+            <strong>My Role:</strong> Unity Developer
+            </p>
+            <ul class="project-information-bulletpoints">
+              <li>These projects were coded and managed entirely by myself.</li>
+              <li>Project architecture and workflow design</li>
+              <li>UI implementation</li>
+              <li>3D assets and scenes implemented</li>
+              <li>Color picker, object coloring and object placement logic</li>
+            </ul>
+          </div>
+          
+            <div class="media-item">
+            <div class="image-grid" >
+              <img src="Senac_cover.png" alt="Screenshot 1" style="width: 45%;
+              height: 20%; display: block; margin-left: auto; margin-right: auto;">
+              <img src="senac_ergonomiaCover.png" alt="Screenshot 2" style="width: 45%;
+              height: 20%; display: block; margin-left: auto; margin-right: auto;">
+            </div>
+            <p class="media-description">
+            My first two projects while working at Plan XP. These are apps made in unity that run
+            directly on the web browser.<br> 
+            The objective of the apps was to teach Senac's Interior Design students about colors 
+            and furniture placement for real life environments. 
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="SaccaroDH_GerenteCardapio.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">
+            Senac Simulador de Harmonia das Cores is the first app I made for PlanXP. It's a simple
+            application that allows the user to select colors and paint parts of the furnitures and
+            walls.
+            </p>
+          </div>
+
+          <div class="media-item">
+            <img src="senac_tiles.png" alt="Visualização do aplicativo" style="width: 70%; 
+            height: 20%; display: block; margin-left: auto; margin-right: auto;">
+            <p class="media-description">
+            To define the valid object placing areas, I made a script that creates a grid of 
+            cells by inputting the required information inside the editor UI and clicking the 
+            Create button.<br>
+            I can manually define the valid cells where the user can drop the furniture 
+            objects.<br>
+          </div>
+
+          <div class="media-item">
+            <img src="senac_validTile.png" alt="Visualização do aplicativo" style="width: 70%; 
+            height: 20%; display: block; margin-left: auto; margin-right: auto;">
+            <p class="media-description">
+            Every tile has information of the objects they accept as it is intentional that only
+            certain objects are allowed on each spot.<br>
+            Whenever an object is placed, a script checks if it is valid and if the rotation is
+            correct by comparing to the entries of an array of valid rotation angles for each 
+            object.
+            </p>
+          </div>
+
+          <div class="media-item">
+            <img src="senac_cozinha.png" alt="Visualização do aplicativo" style="width: 70%; 
+            height: 20%; display: block; margin-left: auto; margin-right: auto;">
+            <p class="media-description">
+            A simple calculation is done to determine if the 
+            mouse position is intersecting a valid tile when the mouse button is released.<br>
+            Whenever an object is placed, a script checks if it is valid and if the rotation is
+            correct by comparing with an array of valid rotation angles for each spot.<br><br>
+            Looking back after all those years, I think it would have been way more efficient to have 
+            individual Object Spot classes where each instance has information about their own
+            valid tiles, rotations and objects that can be place instead of leaving all this info 
+            inside each individual tile. Oh well, living and learning!
+            </p>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="agendamento.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">Architect account features demonstration. 
+              Scheduling a visit to a Saccaro branch.
+            </p>
+          </div>
+          
+          <div class="important-box">
+            <p class="important-description">
+            Link to a build of the Ergonomia project you can run on your web browser.
+            </p>
+            <div class="store-buttons">
+              <a href="https://felipedermann.itch.io/app-tests?password=923569" 
+              target="_blank" class="store-button other-website">
+                <i></i>Senac Ergonomia
+              </a>
+            </div>
+          </div>
+
+          <div class="important-box">
+            <p class="important-description">
+            Link to a build of the Harmonia das Cores project you can run on your web browser.
+            </p>
+            <div class="store-buttons">
+              <a href="https://felipedermann.itch.io/senac-harmoniadascores?password=985632" 
+              target="_blank" class="store-button other-website">
+                <i></i>Senac Harmonia das Cores
+              </a>
+            </div>
+          </div>
+          
+        </div>
+        
+        <button id="prev-project" class="nav-button" type="button">
+          <i class="fa fa-chevron-left"></i> Anterior
+        </button>
+        <button id="next-project" class="nav-button" type="button">
+          Próximo <i class="fa fa-chevron-right"></i>
+        </button>
+        
+        <button id="back-to-top" class="back-to-top-button" type="button">
+          <i class="fa fa-arrow-up"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="../../JS/projects.js"></script>
+    <script src="../../JS/expandableimage.js"></script>
+  </body>
+</html>
