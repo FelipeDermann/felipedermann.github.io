@@ -58,7 +58,7 @@
 
           <div class="media-item">
             <video controls autoplay loop muted>
-              <source src="SaccaroDH_GerenteCardapio.mp4" type="video/mp4">
+              <source src="Senaccores.mp4" type="video/mp4">
               Seu navegador não suporta vídeo.
             </video>
             <p class="media-description">
@@ -69,12 +69,50 @@
           </div>
 
           <div class="media-item">
+            <img src="colorWheel.png" alt="Visualização do aplicativo" style="width: 50%; 
+            height: 20%; display: block; margin-left: auto; margin-right: auto;">
+            <p class="media-description">
+            The color picker is an actual image object with a script I coded that handles the color 
+            picked and draws the gizmos that help visualize the chromatic circle selected.<br><br>
+            Unity places UI objects inside rectangles, like the one the color picker 
+            is inside of, inside my script I access a Unity UI library method that calculates the
+            mouse position relative to the rectangle, extracting information of the pixel clicked 
+            if any exists.
+          </div>
+
+           <div class="important-box">
+            <p class="important-description">
+            Link to a build of the Harmonia das Cores project you can run on your web browser.
+            </p>
+            <div class="store-buttons">
+              <a href="https://felipedermann.itch.io/senac-harmoniadascores?password=985632" 
+              target="_blank" class="store-button other-website">
+                <i></i>Senac Harmonia das Cores
+              </a>
+            </div>
+          </div>
+
+          <div class="media-item">
+            <video controls autoplay loop muted>
+              <source src="Senacergonomia.mp4" type="video/mp4">
+              Seu navegador não suporta vídeo.
+            </video>
+            <p class="media-description">
+            Senac Simulador de Ergonomia em Interiores is the second project I made, which is
+            about placing objects at the correct spots and also facing the right direction which
+            is supposed to follow the rules of ergonomics. <br><br>
+            Whenever you place an object, a pop up appears telling you if it's correct, wrong or
+            if you placed correctly but with a wrong rotation.
+            </p>
+          </div>
+
+          <div class="media-item">
             <img src="senac_tiles.png" alt="Visualização do aplicativo" style="width: 70%; 
             height: 20%; display: block; margin-left: auto; margin-right: auto;">
             <p class="media-description">
             To define the valid object placing areas, I made a script that creates a grid of 
             cells by inputting the required information inside the editor UI and clicking the 
-            Create button.<br>
+            Create button.<br><br>
             I can manually define the valid cells where the user can drop the furniture 
             objects.<br>
           </div>
@@ -84,7 +122,7 @@
             height: 20%; display: block; margin-left: auto; margin-right: auto;">
             <p class="media-description">
             Every tile has information of the objects they accept as it is intentional that only
-            certain objects are allowed on each spot.<br>
+            certain objects are allowed on each spot.<br><br>
             Whenever an object is placed, a script checks if it is valid and if the rotation is
             correct by comparing to the entries of an array of valid rotation angles for each 
             object.
@@ -106,16 +144,6 @@
             </p>
           </div>
 
-          <div class="media-item">
-            <video controls autoplay loop muted>
-              <source src="agendamento.mp4" type="video/mp4">
-              Seu navegador não suporta vídeo.
-            </video>
-            <p class="media-description">Architect account features demonstration. 
-              Scheduling a visit to a Saccaro branch.
-            </p>
-          </div>
-          
           <div class="important-box">
             <p class="important-description">
             Link to a build of the Ergonomia project you can run on your web browser.
@@ -124,18 +152,6 @@
               <a href="https://felipedermann.itch.io/app-tests?password=923569" 
               target="_blank" class="store-button other-website">
                 <i></i>Senac Ergonomia
-              </a>
-            </div>
-          </div>
-
-          <div class="important-box">
-            <p class="important-description">
-            Link to a build of the Harmonia das Cores project you can run on your web browser.
-            </p>
-            <div class="store-buttons">
-              <a href="https://felipedermann.itch.io/senac-harmoniadascores?password=985632" 
-              target="_blank" class="store-button other-website">
-                <i></i>Senac Harmonia das Cores
               </a>
             </div>
           </div>
